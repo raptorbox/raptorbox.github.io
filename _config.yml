@@ -14,9 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Raptor IoT platform
-email: lcapra@create-net.org
-description: > # Raptor allow IoT developer to connect and retrieve generic
-  devices data stream in a fast and intuitive way
+# email: lcapra@create-net.org
+email: 
+description: > # Raptor allow IoT developer to connect and retrieve generic devices data stream in a fast and intuitive way
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: raptorbox
