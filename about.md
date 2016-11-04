@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Raptor is a project by the [OpenIoT area](http://perfectiot.eu/) of [CREATE-NET](http://create-net.org) in the wonderful Trentino, Italy.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+Get in touch if you want to know more about Raptor or our other IoT projects.
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+We have an [IoT training program](http://perfectiot.eu/iot-training/) too!
