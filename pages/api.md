@@ -4,8 +4,13 @@ title: API documentation
 permalink: /api-docs/
 ---
 
-Raptor offers a JSON based restful API to manage object definitions, data streams and actions
+In this section we cover technical details and integration information for developers
 
+## API
 
 - [HTTP API](/api-docs/http)
 - [MQTT Broker](/api-docs/mqtt)
+
+<!-- ## SDK -->
+<!-- - Java SDK -->
+<!-- - [Javascript SDK](/api-docs/sdk/js) -->

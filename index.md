@@ -2,36 +2,18 @@
 layout: default
 ---
 
+## Welcome to the Raptor IoT platform documetnation HUB
 
-Raptor is a platform offering a set of tools to easily and quickly connect your devices, making data they generate accessible from the cloud and offering mechanisms to interact with them remotely in order to build your connected solutions and applications.
+**Work in progress**
 
-![Features](/img/RaptorFeatures.png)
+Those pages are still incomplete and of `alpha` quality  
 
-Raptor offers you specific tools to:
+We will complete and add more pages and detailed informations soon!
 
-- <b>configure your device</b> allowing it to communicate and interact with Raptor cloud services in a secure way
+Thanks for your patience
 
-- <b>manage data flows</b> produced by your devices and handle data storage, allow applications to subscribe for notifications about data changes and offer capabilities to perform actuation on your devices
+---
 
-- <b>build & deploy rapidly</b> your applications enjoying rich tools, open restful APIs and libraries aiming at simplifying the way in which you build your next IoT application
+In the meanwhile, learn how it works and why you should use it for your IoT projects in the [Overview section](/overview)
 
-
-
-{% if site.posts %}
-<div class="posts">
-  {% for post in site.posts %}
-
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-
-</div>
-{% endif %}
+To get a technical overview of the API take a look to the [Documentation](/api-docs)
