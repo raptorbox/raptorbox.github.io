@@ -4,7 +4,6 @@ layout: default
 
 ## Welcome to the Raptor IoT platform documetnation HUB
 
-**Work in progress**
 
 Those pages are still incomplete and of `alpha` quality  
 
