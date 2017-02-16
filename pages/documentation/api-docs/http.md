@@ -1,7 +1,7 @@
 ---
 layout: page
 title: API documentation
-permalink: /api-docs/http
+permalink: /documentation/api-docs/http
 ---
 
 Raptor offers a JSON based restful API to manage object definitions, data streams and actions

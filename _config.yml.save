@@ -68,9 +68,7 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
-
-# Set the Sass partials directory, as we're using @imports
+    css_class: 'highlight'# Set the Sass partials directory, as we're using @imports
 sass:
   style: :expanded # You might prefer to minify using :compressed
 
@@ -89,3 +87,4 @@ exclude:
 
 # Server Config options
 livereload: true     # You no longer need to include --livereload
+#reload_port: 4000    # If you don't want to use the default port

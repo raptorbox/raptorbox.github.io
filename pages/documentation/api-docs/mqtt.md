@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MQTT broker
-permalink: /api-docs/mqtt
+permalink: /documentation/api-docs/mqtt
 ---
 
 ## The protocol
