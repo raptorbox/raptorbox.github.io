@@ -52,8 +52,36 @@ you are able to see all the docker processes active.
 
 ### Full provisioning scripts
 Alternatively a full provisioning [script](https://raw.githubusercontent.com/raptorbox/raptor/master/scripts/provision.sh) for Ubuntu 16.04 is available.
-Raptor offers a JSON based restful API to manage object definitions, data streams and actions
+<br/>
+<br/>
 
+***
+Alternatively you can clone Raptor project in your home directory and in the raptor directory create a symbolic link to the raptor/config directory in this way:
 
+``
+$ sudo ln -s $HOME/config /etc/raptor
+``
 
-**Coming soon** Documentation is progressing on this topic but is not yet completed!
+Then you have to add in the /etc/hosts file:
+
+``
+127.0.0.1 couchbase elasticsearch auth api broker proxy api.raptor.local raptor.local
+``
+
+In order to start mariadb, couchbase and elastichsearch services as docker containers, launch in the raptor directory:
+
+``
+$ docker-compose -f docker-compose.dev.yml up
+``
+
+and with an IDE (e.g. Netbeans) you can start the other Raptorbox services ([api](https://github.com/raptorbox/raptor/tree/master/raptor-http-api), [broker](https://github.com/raptorbox/raptor/tree/master/raptor-broker) and [auth](https://github.com/raptorbox/raptor/tree/master/raptor-auth-service))
+
+Now with the command
+
+``
+$ sudo raptor ps
+``
+
+you are able to see all the docker processes active.
+
+**Coming soon** [APIs Documentation](/documentation/api-docs/) is progressing on this topic but is not yet completed!
