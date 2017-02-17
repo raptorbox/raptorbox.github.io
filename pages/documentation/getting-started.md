@@ -4,6 +4,8 @@ title: Getting Started
 permalink: /documentation/getting-started
 ---
 
+### Docker setup
+
 For a quick installation, you only need both Docker and Docker Compose installed on your pc.
 
 See the official Docker guide to install them:
@@ -20,3 +22,13 @@ $ sudo raptor ps
 ``
 
 you are able to see all the docker processes active.
+
+### Vagrant setup
+
+If you have vagrant installed on your PC just run
+
+``
+$ vagrant up
+``
+
+to get the services up and running for you.
