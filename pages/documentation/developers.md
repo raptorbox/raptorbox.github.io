@@ -59,7 +59,7 @@ Alternatively a full provisioning [script](https://raw.githubusercontent.com/rap
 Alternatively you can clone Raptor project in your home directory and in the raptor directory create a symbolic link to the raptor/config directory in this way:
 
 ``
-$ sudo ln -s $HOME/config /etc/raptor
+$ sudo ln -s `pwd`/config /etc/raptor
 ``
 
 Then you have to add in the /etc/hosts file:
