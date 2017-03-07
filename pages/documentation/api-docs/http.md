@@ -8,5 +8,5 @@ Raptor offers a JSON based restful API to manage object definitions, data stream
 
 The API documentation is available as [swagger](http://swagger.io/) source and is browsable from the provided UI
 
-Object and Data managment | [Browse](http://petstore.swagger.io/?url=http://api.raptorbox.eu/swagger.yaml) | [YAML source](http://api.raptorbox.eu/swagger.yaml)
-Authentication and Authorization | [Browse](http://petstore.swagger.io/?url=http://api.raptorbox.eu/auth/v2/api-docs) | [YAML source](http://api.raptorbox.eu/auth/v2/api-docs)
+- Object, Data and Action management [Browse](http://petstore.swagger.io/?url=http://api.raptorbox.eu/swagger.yaml) or [YAML source](http://api.raptorbox.eu/swagger.yaml)
+- Authentication and Authorization [Browse](http://petstore.swagger.io/?url=http://api.raptorbox.eu/auth/v2/api-docs) or [YAML source](http://api.raptorbox.eu/auth/v2/api-docs)
