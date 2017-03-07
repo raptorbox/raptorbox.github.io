@@ -13,5 +13,5 @@ Swagger UI: http://petstore.swagger.io/?url=http://api.raptorbox.eu/swagger.yaml
 
 Authentication and Authorization API
 
-Swagger: http://api.raptorbox.eu/auth/swagger.yaml
-Swagger UI: http://petstore.swagger.io/?url=http://api.raptorbox.eu/auth/swagger.yaml
+Swagger: http://api.raptorbox.eu/auth/v2/api-docs
+Swagger UI: http://petstore.swagger.io/?url=http://api.raptorbox.eu/auth/v2/api-docs
