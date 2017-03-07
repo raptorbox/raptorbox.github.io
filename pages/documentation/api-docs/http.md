@@ -4,7 +4,9 @@ title: API documentation
 permalink: /documentation/api-docs/http
 ---
 
-Raptor offers a JSON based restful API to manage object definitions, data streams and actions
+Raptor offers a JSON based restful API to manage object definitions, data streams and actions.
 
-- Object and Data managment API [Swagger YAML](http://api.raptorbox.eu/swagger.yaml) | [Swagger UI](http://petstore.swagger.io/?url=http://api.raptorbox.eu/swagger.yaml)
-- Authentication and Authorization API [Swagger YAML](http://api.raptorbox.eu/auth/v2/api-docs) | [Swagger UI](http://petstore.swagger.io/?url=http://api.raptorbox.eu/auth/v2/api-docs)
+The API documentation is available as [swagger](http://swagger.io/) source and is browsable from the provided UI
+
+Object and Data managment | [Browse](http://petstore.swagger.io/?url=http://api.raptorbox.eu/swagger.yaml) | [YAML source](http://api.raptorbox.eu/swagger.yaml)
+Authentication and Authorization | [Browse](http://petstore.swagger.io/?url=http://api.raptorbox.eu/auth/v2/api-docs) | [YAML source](http://api.raptorbox.eu/auth/v2/api-docs)
