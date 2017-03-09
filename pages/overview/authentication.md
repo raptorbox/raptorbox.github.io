@@ -13,7 +13,7 @@ Users will be able to get credentials for the various entities needing to access
 
 The following picture explains relationships among users, devices and API keys handled by Raptor.
 
-![API Keys](/img/API_Keys.png)
+![API Keys](/img/API_Keys.svg)
 
 API Keys
 ---
