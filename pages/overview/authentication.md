@@ -7,7 +7,7 @@ permalink: /overview/authentication
 Introduction
 ---
 
-Raptor supports user login and token based authentication (leveraging on [JWT](https://jwt.io/) (RFC 7519) specification) in order to handle authentication and authorization to access and use Raptor APIs.
+Raptor supports user login and token based authentication (leveraging on [JWT](https://jwt.io/) specification) in order to handle authentication and authorization to access and use Raptor APIs.
 
 Users will be able to get credentials for the various entities needing to access specific platform capabilities via Raptor API: credentials are in the form of access tokens, called API Keys, that can be generated and obtained though Raptor user interface.
 
@@ -27,16 +27,17 @@ Permissions
 
 Permissions allow to have a fine-grained control over what an API key used in client code can do with the device and it's data
 
-For example a `web application` may have a `READ`-only API key to access the data of a device. The `device` itself instead will have `WRITE` permission to the data stream API in order to store the data from sensors.
+For example a `web application` may have a `PULL`-only API key to access the data of a device. The `device` itself instead will have `PUSH` permission to the data stream API in order to store the data from sensors.
 
 Available permissions follow
 
 - `ADMINISTRATION` allow full access to the API, overriding other permissions
 
 - `CREATE` allow to *create new devices*
-- `LOAD` allow to *load the definition* of a device
-- `UPDATE` allow to *update the definition* of a device
+- `READ` allow to *load the definition* of a device
+- `WRITE` allow to *update the definition* of a device
 - `DELETE` allow to *drop* a device and all of its data
+- `LIST` allow to list *objects* an user can access
 
 - `PULL` allow to *read* data for a device
 - `PUSH` allow to *write* data for a device
@@ -62,3 +63,5 @@ Host: api.raptor.local
 Accept: application/json
 Authorization: Bearer <token>
 ```
+
+*Broker connection* A token can be used for authentication to the broker, used in the password field (Note: Due to [ARTEMIS-826](https://issues.apache.org/jira/browse/ARTEMIS-826) this feature may not be yet available)

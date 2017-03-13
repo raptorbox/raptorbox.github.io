@@ -17,6 +17,8 @@ A username/password pair is required and can be one of those operations
 - Username and password of an real user. For example the default user is `admin:admin`
 - Empty username and a valid `apiKey` provided as password. This allow to keep control over permission and eventually to retire the key.
 
+**Note**: Due to [ARTEMIS-826](https://issues.apache.org/jira/browse/ARTEMIS-826) token base authentication is not working
+
 ## Data updates
 
 Every time a stream receive a data update it will be notified over this subscription.
