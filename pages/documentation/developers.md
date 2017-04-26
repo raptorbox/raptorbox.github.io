@@ -84,4 +84,4 @@ $ sudo raptor ps
 
 you are able to see all the docker processes active.
 
-**Coming soon** [APIs Documentation](/documentation/api-docs/) is progressing on this topic but is not yet completed!
+Check out the [APIs Documentation](/documentation/api-docs/) for more informations on this topic

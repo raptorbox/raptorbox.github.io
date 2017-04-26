@@ -6,7 +6,7 @@ permalink: /documentation/tutorials/getting-started
 
 ### Setup the environment
 
-You can find more informations on [how to run an instance](/documentation/getting-started/) or just run `docker-compose up`
+You can find more informations on [how to run an instance](/documentation/getting-started) or just run `docker-compose up`
 
 ### Login and authentication
 
