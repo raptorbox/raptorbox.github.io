@@ -7,7 +7,7 @@ permalink: /overview/authentication
 Introduction
 ---
 
-Raptor supports user login and token based authentication (leveraging on [JWT](https://jwt.io/) specification) in order to handle authentication and authorization to access and use Raptor APIs.
+Raptor supports user login and token based authentication in order to handle authentication and authorization to access and use the Raptor APIs.
 
 Users will be able to get credentials for the various entities needing to access specific platform capabilities via Raptor API: credentials are in the form of access tokens, called API Keys, that can be generated and obtained though Raptor user interface.
 
@@ -18,9 +18,11 @@ The following picture explains relationships among users, devices and API keys h
 API Keys
 ---
 
-A User can have many API Keys which can be generated from the frontend and used in the code.
+A User can have many API Keys which can be generated both from the frontend and backend and used in the code.
 
 API Keys can be generated, disabled and deleted, affecting immediately the device or code using that key.
+
+Keys may have permissions attached to enable fine-grained access control rules
 
 Permissions
 ---
@@ -39,10 +41,9 @@ Available permissions follow
 - `DELETE` allow to *drop* a device and all of its data
 - `LIST` allow to list *objects* an user can access
 
-- `PULL` allow to *read* data for a device
+- `PULL` allow to *read* data for a device. It must be available in order to subscribe to the broker and receive data streams
 - `PUSH` allow to *write* data for a device
-- `SUBSCRIBE` allow to manage *subsciption* and receive data updates on a device
-- `EXECUTE` allow to manage *actuations* and invoke or update the status for a device
+- `EXECUTE` allow to invoke and interact with *actions*. It must be available in order to subscribe to the broker and receive action specific updates.
 
 Permissions can be delegated to a device from an owner (its creator) to another user
 
