@@ -8,6 +8,8 @@ permalink: /documentation/tutorials/getting-started
 
 You can find more informations on [how to run an instance](/documentation/getting-started) or just run `docker-compose up`
 
+By default the web-service listen on `http://localhost:9090` while the MQTT broker on `mqtt://localhost:1883`
+
 ### Login and authentication
 
 The default access credentials are username: `admin` and password: `admin`
@@ -17,7 +19,7 @@ The first operation is to login with an user and get an api token
 ```
 curl -XPOST -H "Content-Type: application/json" \
 -d '{ "username": "admin", "password": "admin" }' \
-http://localhost/auth/login
+http://localhost:9090/auth/login
 ```
 
 You will get back a session token and your user details
