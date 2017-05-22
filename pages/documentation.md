@@ -10,6 +10,7 @@ In this section we cover technical details for starting with Raptorbox and integ
 **Examples**
 
 - [Login and acces to the platform](/documentation/tutorials/getting-started)
+- [Create Tokens](/documentation/tutorials/create-token)
 
 **Resources**
 
