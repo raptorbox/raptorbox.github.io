@@ -7,7 +7,7 @@ permalink: /documentation/tutorials/create-token
 
 ### Preparation
 
-See (Getting started)[/documentation/tutorials/getting-started] to learn how to get an authentication token.
+See [Getting started](/documentation/tutorials/getting-started) to learn how to get an authentication token.
 
 ### Create and object
 
