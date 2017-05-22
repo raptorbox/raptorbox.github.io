@@ -10,6 +10,8 @@ You can find more informations on [how to run an instance](/documentation/gettin
 
 By default the web-service listen on `http://localhost:9090` while the MQTT broker on `mqtt://localhost:1883`
 
+This documentation uses the [jq](https://stedolan.github.io) command line tool to extract JSON values.
+
 ### Login and authentication
 
 The default access credentials are username: `admin` and password: `admin`
@@ -17,9 +19,13 @@ The default access credentials are username: `admin` and password: `admin`
 The first operation is to login with an user and get an api token
 
 ```
-curl -XPOST -H "Content-Type: application/json" \
--d '{ "username": "admin", "password": "admin" }' \
-http://localhost:9090/auth/login
+RUSER=`curl -XPOST -H "Content-Type: application/json" \
+-d '{ "username": "admin", "password": "admin" }' http://raptor.local/auth/login`
+
+RTOKEN=`echo $RUSER | jq -r '.token'`
+RUSER_ID=`echo $RUSER | jq -r '.user.uuid'`
+
+echo "User id $RUSER_ID with token $RTOKEN"
 ```
 
 You will get back a session token and your user details
@@ -35,12 +41,14 @@ You will get back a session token and your user details
 
 With the token it is now possible to query the Data and Object Management API and start sending your data streams!
 
+The login token is available in `$RTOKEN` and will be valid for 30 minutes
+
 For example to list all the registered objects
 
 ```
 curl -XGET -H "Content-Type: application/json" \
--H "Authorization: Bearer <the whole token>" \
-http://localhost/
+-H "Authorization: Bearer $RTOKEN" \
+http://raptor.local/
 ```
 
 ### Accessing the MQTT broker
