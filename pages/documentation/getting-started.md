@@ -10,8 +10,8 @@ For a quick installation, you only need both Docker and Docker Compose installed
 
 See the official Docker guide to install them:
 
-- [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+-   [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker)
+-   [Docker Compose](https://docs.docker.com/compose/install/)
 
 For example on an Ubuntu or Debian box as `root` you can install with
 
@@ -30,9 +30,9 @@ you are able to see all the docker processes active.
 
 A list of useful commands (may require `root` privileges)
 
-- To start / stop / restart  `raptor [start | stop | restart]`
-- To upgrade `raptor pull && raptor up -d`
-- To remove the instance processes `raptor kill`
+-   To start / stop / restart  `raptor [start | stop | restart]`
+-   To upgrade `raptor pull && raptor up -d`
+-   To remove the instance processes `raptor kill`
 
 ### Vagrant setup
 
