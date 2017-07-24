@@ -18,4 +18,4 @@ The API documentation is available as [swagger](http://swagger.io/) source and i
 - [stream](https://petstore.swagger.io/?url=https://raptorbox.github.io/swagger/api/raptor-stream/swagger.json)
 - [action](https://petstore.swagger.io/?url=https://raptorbox.github.io/swagger/api/raptor-action/swagger.json)
 - [tree](https://petstore.swagger.io/?url=https://raptorbox.github.io/swagger/api/raptor-tree/swagger.json)
-- [auth](https://petstore.swagger.io/?url=https://raptorbox.github.io/swagger/api/raptor-auth/swagger.json)       
+- [auth](https://petstore.swagger.io/?url=https://raptorbox.github.io/swagger/api/raptor-auth/swagger.json)
