@@ -6,14 +6,7 @@ permalink: /documentation/developers
 
 First, you need to get a Raptorbox instance up and running locally on your pc. In order to do that you can install it in two way, [step by step](#step-by-step-installation) or through a full [provisioning script](#full-provisioning-scripts). In any case Raptorbox requires some prerequisites in order to be installed on Ubuntu 16.04 or later.
 
-Prerequisites:
-
--   Java SDK 8 or later
--   Maven 3 or later
--   Docker >= 1.12
--   Docker Compose >= 1.9
-
-### Step by Step installation
+## Requirements
 
 You have to install the following tools:
 
@@ -22,67 +15,45 @@ You have to install the following tools:
 -   [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker)
 -   [Docker Compose](https://docs.docker.com/compose/install/)
 
-About Elasticsearch, that will be installed automatically later via Docker container, you have to setup [Elasticsearch 5 Virtual Memory setup](https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-configuration.html#vm-max-map-count)
-
 Then you have to clone the github repository in your home directory:
 
 ``
 $ git clone https://github.com/raptorbox/raptor
 ``
 
-In the new raptor directory created, launch the command
+## Getting started
 
-``
-$ sudo ./scripts/docker-build.sh
-``
+There are 3 `docker-compose` based files for development
 
-and then
+-   `./dev.yml` Base services like databases and admin tools
+-   `./test.yml` Services built from images and configured to talk with local instances, used for developing a single service while maintaining communication with other services
+-   `./docker-compose.yml` Production ready setup
 
-``
-$ sudo docker-compose -f docker-compose.test.yml up -d
-``
+Respectively those first two are wrapped in scripts
 
-Now with the command
+-   `./scripts/dev.sh`
+-   `./scripts/test.sh`
 
-``
-$ sudo docker-compose ps
-``
+## Development environment setup
 
-you are able to see all the docker processes active.
+Development environment can be kick-started with those commands
 
-### Full provisioning scripts
+```bash
+# Package the jars or do it from the IDE
+./scripts/mvn-build.sh
 
-Alternatively a full provisioning [script](https://raw.githubusercontent.com/raptorbox/raptor/master/scripts/provision.sh) for Ubuntu 16.04 is available.
-<br/>
-<br/>
+# Start dockerized services exposing local ports from :1008*
+./scripts/test.sh up -d --build
 
-***
-Alternatively you can clone Raptor project in your home directory and in the raptor directory create a symbolic link to the raptor/config directory in this way:
+# add ./config/nginx.test.yml to an nginx instance to enable proxy features
+sudo apt-get install -y nginx
+sudo ln -s `pwd`/config/nginx.test.yml /etc/nginx/sites-enabled/raptor.test.yml
+sudo service nginx start
 
-``
-$ sudo ln -s `pwd`/config /etc/raptor
-``
+# TODO: Add ./config/hosts to your /etc/hosts
+```
 
-Then you have to add in the /etc/hosts file:
+When launching a service locally (in your IDE) and other services in`test.yml` those flags may be used
 
-``
-127.0.0.1 couchbase elasticsearch auth api broker proxy api.raptor.local raptor.local
-``
-
-In order to start mariadb, couchbase and elastichsearch services as docker containers, launch in the raptor directory:
-
-``
-$ docker-compose -f docker-compose.dev.yml up
-``
-
-and with an IDE (e.g. Netbeans) you can start the other Raptorbox services ([api](https://github.com/raptorbox/raptor/tree/master/raptor-http-api), [broker](https://github.com/raptorbox/raptor/tree/master/raptor-broker) and [auth](https://github.com/raptorbox/raptor/tree/master/raptor-auth-service))
-
-Now with the command
-
-``
-$ sudo raptor ps
-``
-
-you are able to see all the docker processes active.
-
-Check out the [APIs Documentation](/documentation/api-docs/) for more informations on this topic
+-   `--server.port` to match a specific port. Refer to `test.yml` for matching ports eg. `auth` will be matched by nginx at `localhost:10086`
+-   `--dev` set the `development mode flag`. It will load additional configuration files: `raptor.dev.yml` and `${spring.config.name}.dev.yml` eg. `auth.dev.yml`. Those configurations will override the generic ones (`raptor.yml` and `${spring.config.name}.yml`)
