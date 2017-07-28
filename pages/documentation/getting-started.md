@@ -4,7 +4,7 @@ title: Getting Started
 permalink: /documentation/getting-started
 ---
 
-### Docker setup
+## Prerequisites
 
 For a quick installation, you only need both Docker and Docker Compose installed on your pc.
 
@@ -17,27 +17,22 @@ For example on an Ubuntu or Debian box as `root` you can install with
 
 ```
 curl -sSL https://get.docker.com/ | sh
+adduser `whoami` docker
 apt-get install python-pip && pip install docker-compose
 ```
 
-After that to setup a running environment on your pc launch this [script](https://raw.githubusercontent.com/raptorbox/raptor/master/scripts/installer.sh) as root.
+## Start the services
 
-Now with the command
+Now use `docker-compose` to start the services
 
-`sudo raptor ps`
+```bash
+# if the command fails due to permissions, use sudo
+docker-compoes up -d
 
-you are able to see all the docker processes active.
+# view the process status
+docker-compoes ps
 
-A list of useful commands (may require `root` privileges)
+# view the logs
+docker-compoes logs -f
 
--   To start / stop / restart  `raptor [start | stop | restart]`
--   To upgrade `raptor pull && raptor up -d`
--   To remove the instance processes `raptor kill`
-
-### Vagrant setup
-
-If you have vagrant installed on your PC just run
-
-`vagrant up`
-
-to get the services up and running for you.
+```

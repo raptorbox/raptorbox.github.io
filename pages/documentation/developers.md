@@ -50,10 +50,14 @@ sudo apt-get install -y nginx
 sudo ln -s `pwd`/config/nginx.test.yml /etc/nginx/sites-enabled/raptor.test.yml
 sudo service nginx start
 
-# TODO: Add ./config/hosts to your /etc/hosts
+# Create a link to config in /etc/raptor
+sudo ln -s `pwd`/config /etc/raptor
+
+# Add hosts aliases for docker services
+cat `pwd`/config/hosts | sudo tee -a /etc/hosts
 ```
 
 When launching a service locally (in your IDE) and other services in`test.yml` those flags may be used
 
 -   `--server.port` to match a specific port. Refer to `test.yml` for matching ports eg. `auth` will be matched by nginx at `localhost:10086`
--   `--dev` set the `development mode flag`. It will load additional configuration files: `raptor.dev.yml` and `${spring.config.name}.dev.yml` eg. `auth.dev.yml`. Those configurations will override the generic ones (`raptor.yml` and `${spring.config.name}.yml`)
+-   `--dev` set the `development mode flag`. It will load additional configuration files: `raptor.dev.yml` and `${spring.config.name}.dev.yml` eg. `auth.dev.yml`. Those configurations will override the generic ones (`raptor.yml` and `${spring.config.name}.yml`).
