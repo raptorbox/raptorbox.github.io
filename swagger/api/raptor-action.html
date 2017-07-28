@@ -76,7 +76,7 @@ Action API handles action state and triggering
 
 ### GET
 
-<a id="getActionStatus">Return the status information for an action</a>
+<a id="getActionStatusValue">Return the textual status value of an action</a>
 
 
 
@@ -137,12 +137,12 @@ Action API handles action state and triggering
 
 #### Response
 
-**Content-Type: ** application/json, application/json;charset=UTF-8
+**Content-Type: ** text/plain
 
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/ActionStatus">ActionStatus</a>|
+| 200    | successful operation | string|
 
 
 

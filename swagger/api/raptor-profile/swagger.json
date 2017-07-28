@@ -141,10 +141,6 @@
     "JsonNode" : {
       "type" : "object",
       "properties" : {
-        "nodeType" : {
-          "type" : "string",
-          "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
-        },
         "float" : {
           "type" : "boolean"
         },
@@ -165,6 +161,10 @@
         },
         "object" : {
           "type" : "boolean"
+        },
+        "nodeType" : {
+          "type" : "string",
+          "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
         },
         "pojo" : {
           "type" : "boolean"

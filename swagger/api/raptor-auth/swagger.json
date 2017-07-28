@@ -851,10 +851,6 @@
     "JsonNode" : {
       "type" : "object",
       "properties" : {
-        "nodeType" : {
-          "type" : "string",
-          "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
-        },
         "float" : {
           "type" : "boolean"
         },
@@ -875,6 +871,10 @@
         },
         "object" : {
           "type" : "boolean"
+        },
+        "nodeType" : {
+          "type" : "string",
+          "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
         },
         "pojo" : {
           "type" : "boolean"
@@ -1018,6 +1018,17 @@
         },
         "expired" : {
           "type" : "boolean"
+        },
+        "subjectParentId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "subjectId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "owner" : {
+          "$ref" : "#/definitions/User"
         }
       }
     },
