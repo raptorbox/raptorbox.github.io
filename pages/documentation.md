@@ -12,6 +12,7 @@ In this section we cover technical details for starting with Raptorbox and integ
 -   [MQTT topics](/documentation/api-docs/mqtt)
 -   [Javascript SDK](https://github.com/raptorbox/raptorjsblob/master/README.md)
 -   [Java SDK](https://github.com/raptorbox/raptor/blob/master/raptor-sdk/README.md)
+-   [Python SDK (work in progress)](https://github.com/raptorbox/raptorpy/blob/master/README.rst)
 
 ## Tutorials & Guides
 
