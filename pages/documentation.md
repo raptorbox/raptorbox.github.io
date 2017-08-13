@@ -22,5 +22,6 @@ In this section we cover technical details for starting with Raptorbox and integ
 
 ## Setup and configuration
 
--   [How to run an instance](getting-started)
--   [Developer environment setup](developers)
+-   [How to run an instance](/documentation/getting-started)
+-   [configuration](/documentation/configuration)
+-   [Developer environment setup](/documentation/developers)

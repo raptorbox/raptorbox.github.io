@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Getting Started
-permalink: /documentation/getting-started
+title: Configuration
+permalink: /documentation/configuration
 ---
 
 ## Prerequisites
@@ -20,17 +20,8 @@ For example on an Ubuntu or Debian box as `root` you can install with
 ```
 curl -sSL https://get.docker.com/ | sh
 adduser `whoami` docker
-sudo apt-get install python-pip -y && sudo  pip install docker-compose
+apt-get install python-pip && pip install docker-compose
 ```
-
-## Fast setup
-
-Copy-paste this snippet to get started immediately
-
-```
-curl -s https://raw.githubusercontent.com/raptorbox/raptor/master/scripts/installer.sh | sudo sh -s --
-```
-
 
 ## Retrieve a release
 
