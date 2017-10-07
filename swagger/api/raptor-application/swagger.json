@@ -1,0 +1,29 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Application API manage IoT app instances",
+    "version" : "1.0",
+    "title" : "Application API",
+    "termsOfService" : "http://github.com/raptorbox",
+    "contact" : {
+      "name" : "OpenIoT research unit",
+      "url" : "http://github.com/raptorbox",
+      "email" : "openiot@fbk.eu"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host" : "raptor.local",
+  "basePath" : "/profile",
+  "schemes" : [ "http", "https" ],
+  "securityDefinitions" : {
+    "Authorization" : {
+      "type" : "apiKey"
+    },
+    "oauth2" : {
+      "type" : "oauth2"
+    }
+  }
+}

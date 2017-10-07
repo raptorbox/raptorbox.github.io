@@ -3,7 +3,7 @@
 <title>API Document</title>
 
 <xmp theme="united" style="display:none;">
-#raptor-profile
+#Profile API
 
 
 ## HTTP | HTTPS://raptor.local/profile
@@ -71,12 +71,12 @@ Profile API handles local key-value storage per user
 # APIs
 
 
-## /{userId}
+## /profile/{userId}
 
 
 ### GET
 
-<a id="getPreferences">Return all the user preferences</a>
+<a id="getUserProfile">Return a profile value by key</a>
 
 
 
@@ -129,7 +129,7 @@ Profile API handles local key-value storage per user
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/UserProfile">UserProfile</a>|
+| 200    | successful operation | <a href="#/definitions/Profile">Profile</a>|
 
 
 
@@ -148,12 +148,12 @@ Profile API handles local key-value storage per user
 
 
 
-## /{userId}/{name}
+## /profile/{userId}/{name}
 
 
 ### GET
 
-<a id="getPreference">Return a user preference by name</a>
+<a id="getProfile">Return a profile value by key</a>
 
 
 
@@ -219,7 +219,7 @@ Profile API handles local key-value storage per user
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/UserProfile">UserProfile</a>|
+| 200    | successful operation | <a href="#/definitions/Profile">Profile</a>|
 
 
 
@@ -227,7 +227,7 @@ Profile API handles local key-value storage per user
 
 ### PUT
 
-<a id="setPreference">Set an user preference by name</a>
+<a id="setProfile">Set an profile value by key</a>
 
 
 
@@ -307,7 +307,7 @@ Profile API handles local key-value storage per user
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/UserProfile">UserProfile</a>|
+| 200    | successful operation | <a href="#/definitions/Profile">Profile</a>|
 
 
 
@@ -317,7 +317,7 @@ Profile API handles local key-value storage per user
 
 ### DELETE
 
-<a id="deletePreference">Drop an user preference by name</a>
+<a id="deleteProfile">Drop an profile value by key</a>
 
 
 
@@ -383,7 +383,7 @@ Profile API handles local key-value storage per user
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/UserProfile">UserProfile</a>|
+| 200    | successful operation | <a href="#/definitions/Profile">Profile</a>|
 
 
 
@@ -416,6 +416,19 @@ Profile API handles local key-value storage per user
                 
                     
                     boolean
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>nodeType</td>
+            <td>
+                
+                    
+                    string
                 
             </td>
             <td>optional</td>
@@ -494,19 +507,6 @@ Profile API handles local key-value storage per user
                 
                     
                     boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>nodeType</td>
-            <td>
-                
-                    
-                    string
                 
             </td>
             <td>optional</td>
@@ -685,7 +685,7 @@ Profile API handles local key-value storage per user
     
 </table>
 
-## <a name="/definitions/UserProfile">UserProfile</a>
+## <a name="/definitions/Profile">Profile</a>
 
 <table border="1">
     <tr>

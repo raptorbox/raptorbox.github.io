@@ -3,7 +3,7 @@
   "info" : {
     "description" : "Action API handles action state and triggering",
     "version" : "1.0",
-    "title" : "raptor-action",
+    "title" : "Action API",
     "termsOfService" : "http://github.com/raptorbox",
     "contact" : {
       "name" : "OpenIoT research unit",
@@ -22,7 +22,7 @@
   } ],
   "schemes" : [ "http", "https" ],
   "paths" : {
-    "/{deviceId}/{actionId}" : {
+    "/action/{deviceId}/{actionId}" : {
       "get" : {
         "tags" : [ "Action" ],
         "summary" : "Return the textual status value of an action",
@@ -174,7 +174,7 @@
         "actionId" : {
           "type" : "string"
         },
-        "objectId" : {
+        "deviceId" : {
           "type" : "string"
         }
       }

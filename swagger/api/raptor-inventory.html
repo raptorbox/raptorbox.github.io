@@ -3,7 +3,7 @@
 <title>API Document</title>
 
 <xmp theme="united" style="display:none;">
-#raptor-inventory
+#${project.name
 
 
 ## HTTP | HTTPS://raptor.local/inventory
@@ -71,7 +71,7 @@ Inventory API handles Device definitions
 # APIs
 
 
-## /
+## /inventory
 
 
 ### GET
@@ -185,7 +185,7 @@ Inventory API handles Device definitions
 
 
 
-## /search
+## /inventory/search
 
 
 
@@ -279,7 +279,7 @@ Inventory API handles Device definitions
 
 
 
-## /{deviceId}
+## /inventory/{deviceId}
 
 
 ### GET
@@ -620,7 +620,7 @@ Inventory API handles Device definitions
         </tr>
     
         <tr>
-            <td>objectId</td>
+            <td>deviceId</td>
             <td>
                 
                     
@@ -1153,6 +1153,19 @@ Inventory API handles Device definitions
         </tr>
     
         <tr>
+            <td>dynamic</td>
+            <td>
+                
+                    
+                    boolean
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
             <td>channels</td>
             <td>
                 
@@ -1236,6 +1249,19 @@ Inventory API handles Device definitions
                 
                 
                 array[string]
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>match</td>
+            <td>
+                
+                    
+                    string
                 
             </td>
             <td>optional</td>

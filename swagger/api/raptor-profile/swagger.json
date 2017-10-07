@@ -3,7 +3,7 @@
   "info" : {
     "description" : "Profile API handles local key-value storage per user",
     "version" : "1.0",
-    "title" : "raptor-profile",
+    "title" : "Profile API",
     "termsOfService" : "http://github.com/raptorbox",
     "contact" : {
       "name" : "OpenIoT research unit",
@@ -18,16 +18,16 @@
   "host" : "raptor.local",
   "basePath" : "/profile",
   "tags" : [ {
-    "name" : "UserProfile"
+    "name" : "Profile"
   } ],
   "schemes" : [ "http", "https" ],
   "paths" : {
-    "/{userId}" : {
+    "/profile/{userId}" : {
       "get" : {
-        "tags" : [ "UserProfile" ],
-        "summary" : "Return all the user preferences",
+        "tags" : [ "Profile" ],
+        "summary" : "Return a profile value by key",
         "description" : "",
-        "operationId" : "getPreferences",
+        "operationId" : "getUserProfile",
         "parameters" : [ {
           "name" : "userId",
           "in" : "path",
@@ -38,18 +38,18 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/UserProfile"
+              "$ref" : "#/definitions/Profile"
             }
           }
         }
       }
     },
-    "/{userId}/{name}" : {
+    "/profile/{userId}/{name}" : {
       "get" : {
-        "tags" : [ "UserProfile" ],
-        "summary" : "Return a user preference by name",
+        "tags" : [ "Profile" ],
+        "summary" : "Return a profile value by key",
         "description" : "",
-        "operationId" : "getPreference",
+        "operationId" : "getProfile",
         "parameters" : [ {
           "name" : "userId",
           "in" : "path",
@@ -65,16 +65,16 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/UserProfile"
+              "$ref" : "#/definitions/Profile"
             }
           }
         }
       },
       "put" : {
-        "tags" : [ "UserProfile" ],
-        "summary" : "Set an user preference by name",
+        "tags" : [ "Profile" ],
+        "summary" : "Set an profile value by key",
         "description" : "",
-        "operationId" : "setPreference",
+        "operationId" : "setProfile",
         "parameters" : [ {
           "name" : "userId",
           "in" : "path",
@@ -97,16 +97,16 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/UserProfile"
+              "$ref" : "#/definitions/Profile"
             }
           }
         }
       },
       "delete" : {
-        "tags" : [ "UserProfile" ],
-        "summary" : "Drop an user preference by name",
+        "tags" : [ "Profile" ],
+        "summary" : "Drop an profile value by key",
         "description" : "",
-        "operationId" : "deletePreference",
+        "operationId" : "deleteProfile",
         "parameters" : [ {
           "name" : "userId",
           "in" : "path",
@@ -122,7 +122,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/UserProfile"
+              "$ref" : "#/definitions/Profile"
             }
           }
         }
@@ -144,6 +144,10 @@
         "float" : {
           "type" : "boolean"
         },
+        "nodeType" : {
+          "type" : "string",
+          "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
+        },
         "number" : {
           "type" : "boolean"
         },
@@ -161,10 +165,6 @@
         },
         "object" : {
           "type" : "boolean"
-        },
-        "nodeType" : {
-          "type" : "string",
-          "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
         },
         "pojo" : {
           "type" : "boolean"
@@ -207,7 +207,7 @@
         }
       }
     },
-    "UserProfile" : {
+    "Profile" : {
       "type" : "object",
       "properties" : {
         "id" : {

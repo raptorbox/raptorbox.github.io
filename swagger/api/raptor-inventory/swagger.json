@@ -3,7 +3,7 @@
   "info" : {
     "description" : "Inventory API handles Device definitions",
     "version" : "1.0",
-    "title" : "raptor-inventory",
+    "title" : "${project.name",
     "termsOfService" : "http://github.com/raptorbox",
     "contact" : {
       "name" : "OpenIoT research unit",
@@ -22,7 +22,7 @@
   } ],
   "schemes" : [ "http", "https" ],
   "paths" : {
-    "/" : {
+    "/inventory" : {
       "get" : {
         "tags" : [ "Inventory" ],
         "summary" : "Return the user devices",
@@ -60,7 +60,7 @@
         }
       }
     },
-    "/search" : {
+    "/inventory/search" : {
       "post" : {
         "tags" : [ "Inventory" ],
         "summary" : "Search for device instances",
@@ -97,7 +97,7 @@
         }
       }
     },
-    "/{deviceId}" : {
+    "/inventory/{deviceId}" : {
       "get" : {
         "tags" : [ "Inventory" ],
         "summary" : "Return a device instance definition",
@@ -209,7 +209,7 @@
         "actionId" : {
           "type" : "string"
         },
-        "objectId" : {
+        "deviceId" : {
           "type" : "string"
         }
       }
@@ -375,6 +375,9 @@
         "description" : {
           "type" : "string"
         },
+        "dynamic" : {
+          "type" : "boolean"
+        },
         "channels" : {
           "type" : "object",
           "additionalProperties" : {
@@ -403,6 +406,9 @@
           "items" : {
             "type" : "string"
           }
+        },
+        "match" : {
+          "type" : "string"
         }
       }
     }

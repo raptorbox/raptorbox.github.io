@@ -3,7 +3,7 @@
   "info" : {
     "description" : "Tree API handles relations between devices and users",
     "version" : "1.0",
-    "title" : "raptor-tree",
+    "title" : "Tree API",
     "termsOfService" : "http://github.com/raptorbox",
     "contact" : {
       "name" : "OpenIoT research unit",
@@ -24,7 +24,7 @@
   } ],
   "schemes" : [ "http", "https" ],
   "paths" : {
-    "/" : {
+    "/tree" : {
       "get" : {
         "tags" : [ "Tree", "Inventory" ],
         "summary" : "List all trees",
@@ -70,7 +70,7 @@
         }
       }
     },
-    "/{nodeId}" : {
+    "/tree/{nodeId}" : {
       "get" : {
         "tags" : [ "Tree", "Inventory" ],
         "summary" : "Return the whole tree a node belongs to",
@@ -115,7 +115,7 @@
         }
       }
     },
-    "/{nodeId}/children" : {
+    "/tree/{nodeId}/children" : {
       "get" : {
         "tags" : [ "Tree", "Inventory" ],
         "summary" : "Return the children for this node",
@@ -140,7 +140,7 @@
         }
       }
     },
-    "/{parentId}" : {
+    "/tree/{parentId}" : {
       "put" : {
         "tags" : [ "Tree", "Inventory" ],
         "summary" : "Add items to the tree node",
