@@ -16,6 +16,7 @@ In this section we cover technical details for starting with Raptorbox and integ
 
 ## Tutorials & Guides
 
+-   [Raptor kick-start project](https://github.com/raptorbox/raptor-tutorial)
 -   [Login and access to the platform](/documentation/tutorials/getting-started)
 -   [Create Tokens](/documentation/tutorials/create-token)
 -   [Manage Users](/documentation/tutorials/manage-users)

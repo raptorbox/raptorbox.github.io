@@ -6,7 +6,13 @@ permalink: /documentation/getting-started
 
 ## Prerequisites
 
-Raptor require a minimum of 4GB of RAM to run slightly.
+### Requirements
+
+1. Raptor requires a minimum of 4GB of RAM to run slightly.
+2. Ubuntu 16.04 or later
+
+
+### Required software
 
 For a quick installation, you only need both Docker and Docker Compose installed on your pc.
 
@@ -15,9 +21,9 @@ See the official Docker guide to install them:
 -   [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker)
 -   [Docker Compose](https://docs.docker.com/compose/install/)
 
-For example on an Ubuntu or Debian box as `root` you can install with
+Example: on an Ubuntu or Debian box as `root` you can install with
 
-```
+```bash
 curl -sSL https://get.docker.com/ | sh
 adduser `whoami` docker
 sudo apt-get install python-pip -y && sudo  pip install docker-compose
@@ -27,7 +33,7 @@ sudo apt-get install python-pip -y && sudo  pip install docker-compose
 
 Copy-paste this snippet to get started immediately
 
-```
+```bash
 curl -s https://raw.githubusercontent.com/raptorbox/raptor/master/scripts/installer.sh | sudo sh -s --
 ```
 
@@ -38,7 +44,7 @@ Check the [release page](https://github.com/raptorbox/raptor/releases) for an up
 
 Alternatively use the repository
 
-```
+```bash
 git clone https://github.com/raptorbox/raptor.git
 cd raptor
 git tag
