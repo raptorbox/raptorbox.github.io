@@ -1,8 +1,4 @@
----
-layout: page
-title: About
-permalink: /about/
----
+# About
 
 Raptor is a project by the [OpenIoT area](http://perfectiot.eu/) of [CREATE-NET](http://create-net.org) in the wonderful Trentino, Italy.
 

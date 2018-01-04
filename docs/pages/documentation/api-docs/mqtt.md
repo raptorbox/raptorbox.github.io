@@ -1,8 +1,4 @@
----
-layout: page
-title: MQTT broker
-permalink: /documentation/api-docs/mqtt
----
+# MQTT broker
 
 ## The protocol
 
@@ -83,7 +79,6 @@ Additionally based on the event type
 
 ## Hierarchy based events
 
-
 Objects can be used as group for other objects as it may be for gateways devices.
 
 A parent object can receive all the children notifications by registering with a wildcard on its id
@@ -91,7 +86,6 @@ A parent object can receive all the children notifications by registering with a
 For example `<parent id>/#` will catch all of its children related notifications (events, actions, streams)
 
 ## Disable events
-
 
 *Note* To disable events for an object set `eventsEnabled` (under `settings`) to `false` in the definition
 

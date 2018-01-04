@@ -1,8 +1,4 @@
----
-layout: page
-title: Getting started
-permalink: /documentation/tutorials/getting-started
----
+# Getting started
 
 ### Setup the environment
 

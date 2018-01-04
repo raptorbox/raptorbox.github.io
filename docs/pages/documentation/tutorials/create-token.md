@@ -1,9 +1,4 @@
----
-layout: page
-title: Create and Assign Token
-permalink: /documentation/tutorials/create-token
----
-
+# Create and Assign Token
 
 ### Preparation
 

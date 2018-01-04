@@ -1,9 +1,4 @@
----
-layout: page
-title: Manage users
-permalink: /documentation/tutorials/manage-users
----
-
+# Manage users
 
 ### Preparation
 
@@ -13,7 +8,7 @@ See [Getting started](/documentation/tutorials/getting-started) to learn how to 
 
 **Notes:**
 
--   Only `admin` roles can create new users
+- An `admin` or `admin_user` permission can manage users
 
 ```bash
 NEWUSER=`curl -X POST \

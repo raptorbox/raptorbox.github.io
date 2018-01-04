@@ -1,8 +1,4 @@
----
-layout: page
-title: Data Model
-permalink: /overview/data-model
----
+# Data Model
 
 Raptor uses a well-defined data model to define a device and all of its possible interactions
 
