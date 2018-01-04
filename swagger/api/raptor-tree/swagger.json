@@ -70,6 +70,59 @@
         }
       }
     },
+    "/tree/search" : {
+      "post" : {
+        "tags" : [ "Tree", "Inventory" ],
+        "summary" : "Search for tree nodes instances",
+        "description" : "",
+        "operationId" : "searchTreeNodes",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/TreeQuery"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Page"
+            }
+          }
+        }
+      }
+    },
+    "/tree/{id}" : {
+      "put" : {
+        "tags" : [ "Tree", "Inventory" ],
+        "summary" : "Update a tree node",
+        "description" : "",
+        "operationId" : "update",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/TreeNode"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        }
+      }
+    },
     "/tree/{nodeId}" : {
       "get" : {
         "tags" : [ "Tree", "Inventory" ],
@@ -140,7 +193,7 @@
         }
       }
     },
-    "/tree/{parentId}" : {
+    "/tree/{parentId}/children" : {
       "put" : {
         "tags" : [ "Tree", "Inventory" ],
         "summary" : "Add items to the tree node",
@@ -182,6 +235,106 @@
     }
   },
   "definitions" : {
+    "MapQuery" : {
+      "type" : "object",
+      "properties" : {
+        "containsKey" : {
+          "type" : "string"
+        },
+        "containsValue" : {
+          "type" : "object"
+        },
+        "has" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object"
+          }
+        }
+      }
+    },
+    "Page" : {
+      "type" : "object",
+      "properties" : {
+        "totalElements" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "first" : {
+          "type" : "boolean"
+        },
+        "sort" : {
+          "$ref" : "#/definitions/Sort"
+        },
+        "last" : {
+          "type" : "boolean"
+        },
+        "numberOfElements" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "content" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object"
+          }
+        },
+        "number" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "Sort" : {
+      "type" : "object"
+    },
+    "SortQuery" : {
+      "type" : "object",
+      "properties" : {
+        "direction" : {
+          "type" : "string"
+        },
+        "fields" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "TextQuery" : {
+      "type" : "object",
+      "properties" : {
+        "startWith" : {
+          "type" : "string"
+        },
+        "endWith" : {
+          "type" : "string"
+        },
+        "contains" : {
+          "type" : "string"
+        },
+        "equals" : {
+          "type" : "string"
+        },
+        "in" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "match" : {
+          "type" : "string"
+        }
+      }
+    },
     "TreeNode" : {
       "type" : "object",
       "properties" : {
@@ -191,9 +344,12 @@
         "name" : {
           "type" : "string"
         },
+        "domain" : {
+          "type" : "string"
+        },
         "type" : {
           "type" : "string",
-          "enum" : [ "group", "user", "device", "application" ]
+          "enum" : [ "app", "device", "stream", "action", "data", "tree", "profile", "user", "permission", "group", "token" ]
         },
         "userId" : {
           "type" : "string"
@@ -210,6 +366,49 @@
           "items" : {
             "$ref" : "#/definitions/TreeNode"
           }
+        }
+      }
+    },
+    "TreeQuery" : {
+      "type" : "object",
+      "properties" : {
+        "userId" : {
+          "type" : "string"
+        },
+        "deviceId" : {
+          "type" : "string"
+        },
+        "offset" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "limit" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortBy" : {
+          "$ref" : "#/definitions/SortQuery"
+        },
+        "id" : {
+          "$ref" : "#/definitions/TextQuery"
+        },
+        "name" : {
+          "$ref" : "#/definitions/TextQuery"
+        },
+        "domain" : {
+          "$ref" : "#/definitions/TextQuery"
+        },
+        "description" : {
+          "$ref" : "#/definitions/TextQuery"
+        },
+        "parentId" : {
+          "$ref" : "#/definitions/TextQuery"
+        },
+        "properties" : {
+          "$ref" : "#/definitions/MapQuery"
+        },
+        "empty" : {
+          "type" : "boolean"
         }
       }
     }

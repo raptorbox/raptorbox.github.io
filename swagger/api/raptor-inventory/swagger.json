@@ -257,6 +257,10 @@
           "format" : "int64",
           "readOnly" : true
         },
+        "domain" : {
+          "type" : "string",
+          "readOnly" : true
+        },
         "properties" : {
           "type" : "object",
           "readOnly" : true,
@@ -281,6 +285,9 @@
           "additionalProperties" : {
             "$ref" : "#/definitions/Action"
           }
+        },
+        "ownerId" : {
+          "type" : "string"
         }
       }
     },
@@ -308,6 +315,9 @@
           "$ref" : "#/definitions/TextQuery"
         },
         "name" : {
+          "$ref" : "#/definitions/TextQuery"
+        },
+        "domain" : {
           "$ref" : "#/definitions/TextQuery"
         },
         "description" : {

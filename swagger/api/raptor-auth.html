@@ -1486,6 +1486,83 @@ The authentication token, provided via &#x60;Authorization&#x60; header must sti
 
 
 
+## /auth/token/current
+
+
+### GET
+
+<a id="getCurrentToken">Get details about the current token</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+
+
+
+<tr>
+    <th>${raptor.auth.header}</th>
+    <td>header</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+
+
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/ApiDocsToken">ApiDocsToken</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## /auth/token/{tokenId}
 
 
@@ -2617,11 +2694,11 @@ The authentication token, provided via &#x60;Authorization&#x60; header must sti
     </tr>
     
         <tr>
-            <td>float</td>
+            <td>nodeType</td>
             <td>
                 
                     
-                    boolean
+                    string
                 
             </td>
             <td>optional</td>
@@ -2630,11 +2707,11 @@ The authentication token, provided via &#x60;Authorization&#x60; header must sti
         </tr>
     
         <tr>
-            <td>nodeType</td>
+            <td>float</td>
             <td>
                 
                     
-                    string
+                    boolean
                 
             </td>
             <td>optional</td>
@@ -2657,19 +2734,6 @@ The authentication token, provided via &#x60;Authorization&#x60; header must sti
     
         <tr>
             <td>int</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>valueNode</td>
             <td>
                 
                     
@@ -2852,6 +2916,19 @@ The authentication token, provided via &#x60;Authorization&#x60; header must sti
     
         <tr>
             <td>binary</td>
+            <td>
+                
+                    
+                    boolean
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>valueNode</td>
             <td>
                 
                     
@@ -3202,6 +3279,19 @@ The authentication token, provided via &#x60;Authorization&#x60; header must sti
         </tr>
     
         <tr>
+            <td>owner</td>
+            <td>
+                
+                    <a href="#/definitions/User">User</a>
+                    
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
             <td>valid</td>
             <td>
                 
@@ -3246,19 +3336,6 @@ The authentication token, provided via &#x60;Authorization&#x60; header must sti
                 
                     
                     integer (int64)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>owner</td>
-            <td>
-                
-                    <a href="#/definitions/User">User</a>
-                    
                 
             </td>
             <td>optional</td>

@@ -1,0 +1,25 @@
+{
+  "name": "raptorbox.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/gitbook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raptorbox/raptorbox.github.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raptorbox/raptorbox.github.io/issues"
+  },
+  "homepage": "https://github.com/raptorbox/raptorbox.github.io#readme",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}

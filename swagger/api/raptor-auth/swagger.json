@@ -509,6 +509,28 @@
         }
       }
     },
+    "/auth/token/current" : {
+      "get" : {
+        "tags" : [ "Token" ],
+        "summary" : "Get details about the current token",
+        "description" : "",
+        "operationId" : "getCurrentToken",
+        "parameters" : [ {
+          "name" : "${raptor.auth.header}",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ApiDocsToken"
+            }
+          }
+        }
+      }
+    },
     "/auth/token/{tokenId}" : {
       "get" : {
         "tags" : [ "Token" ],
@@ -863,20 +885,17 @@
     "JsonNode" : {
       "type" : "object",
       "properties" : {
-        "float" : {
-          "type" : "boolean"
-        },
         "nodeType" : {
           "type" : "string",
           "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
+        },
+        "float" : {
+          "type" : "boolean"
         },
         "number" : {
           "type" : "boolean"
         },
         "int" : {
-          "type" : "boolean"
-        },
-        "valueNode" : {
           "type" : "boolean"
         },
         "containerNode" : {
@@ -919,6 +938,9 @@
           "type" : "boolean"
         },
         "binary" : {
+          "type" : "boolean"
+        },
+        "valueNode" : {
           "type" : "boolean"
         },
         "array" : {
@@ -1025,6 +1047,9 @@
           "type" : "string",
           "enum" : [ "DEFAULT", "JWT" ]
         },
+        "owner" : {
+          "$ref" : "#/definitions/User"
+        },
         "valid" : {
           "type" : "boolean"
         },
@@ -1038,9 +1063,6 @@
         "subjectId" : {
           "type" : "integer",
           "format" : "int64"
-        },
-        "owner" : {
-          "$ref" : "#/definitions/User"
         }
       }
     },

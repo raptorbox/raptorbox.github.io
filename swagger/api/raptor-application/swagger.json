@@ -17,13 +17,305 @@
   },
   "host" : "raptor.local",
   "basePath" : "/profile",
+  "tags" : [ {
+    "name" : "Application"
+  } ],
   "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/app" : {
+      "get" : {
+        "tags" : [ "Application" ],
+        "summary" : "Return the apps owned by an user",
+        "description" : "",
+        "operationId" : "getApps",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/App"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Application" ],
+        "summary" : "Create a new app",
+        "description" : "",
+        "operationId" : "createApp",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/App"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/App"
+            }
+          }
+        }
+      }
+    },
+    "/app/search" : {
+      "post" : {
+        "tags" : [ "Application" ],
+        "summary" : "Search for apps",
+        "description" : "",
+        "operationId" : "searchApps",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AppQuery"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/App"
+            }
+          }
+        }
+      }
+    },
+    "/app/{appId}" : {
+      "get" : {
+        "tags" : [ "Application" ],
+        "summary" : "Load an app",
+        "description" : "",
+        "operationId" : "readApp",
+        "parameters" : [ {
+          "name" : "appId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/App"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Application" ],
+        "summary" : "Update an app",
+        "description" : "",
+        "operationId" : "updateApp",
+        "parameters" : [ {
+          "name" : "appId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/App"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/App"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Application" ],
+        "summary" : "Delete an app",
+        "description" : "",
+        "operationId" : "deleteApp",
+        "parameters" : [ {
+          "name" : "appId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/App"
+            }
+          }
+        }
+      }
+    }
+  },
   "securityDefinitions" : {
     "Authorization" : {
       "type" : "apiKey"
     },
     "oauth2" : {
       "type" : "oauth2"
+    }
+  },
+  "definitions" : {
+    "App" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "groups" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/AppGroup"
+          }
+        },
+        "devices" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "users" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/AppUser"
+          }
+        }
+      }
+    },
+    "AppGroup" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "permissions" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "AppQuery" : {
+      "type" : "object",
+      "properties" : {
+        "userId" : {
+          "type" : "string"
+        },
+        "deviceId" : {
+          "type" : "string"
+        },
+        "offset" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "limit" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortBy" : {
+          "$ref" : "#/definitions/SortQuery"
+        },
+        "id" : {
+          "$ref" : "#/definitions/TextQuery"
+        },
+        "name" : {
+          "$ref" : "#/definitions/TextQuery"
+        },
+        "description" : {
+          "$ref" : "#/definitions/TextQuery"
+        },
+        "users" : {
+          "$ref" : "#/definitions/StringListQuery"
+        },
+        "devices" : {
+          "$ref" : "#/definitions/StringListQuery"
+        },
+        "empty" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "AppUser" : {
+      "type" : "object",
+      "properties" : {
+        "groups" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "SortQuery" : {
+      "type" : "object",
+      "properties" : {
+        "direction" : {
+          "type" : "string"
+        },
+        "fields" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "StringListQuery" : {
+      "type" : "object",
+      "properties" : {
+        "in" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "TextQuery" : {
+      "type" : "object",
+      "properties" : {
+        "startWith" : {
+          "type" : "string"
+        },
+        "endWith" : {
+          "type" : "string"
+        },
+        "contains" : {
+          "type" : "string"
+        },
+        "equals" : {
+          "type" : "string"
+        },
+        "in" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "match" : {
+          "type" : "string"
+        }
+      }
     }
   }
 }

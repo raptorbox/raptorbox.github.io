@@ -141,26 +141,20 @@
     "JsonNode" : {
       "type" : "object",
       "properties" : {
-        "float" : {
-          "type" : "boolean"
-        },
         "nodeType" : {
           "type" : "string",
           "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
         },
+        "float" : {
+          "type" : "boolean"
+        },
         "number" : {
           "type" : "boolean"
         },
-        "int" : {
-          "type" : "boolean"
-        },
-        "valueNode" : {
-          "type" : "boolean"
-        },
-        "containerNode" : {
-          "type" : "boolean"
-        },
         "missingNode" : {
+          "type" : "boolean"
+        },
+        "int" : {
           "type" : "boolean"
         },
         "object" : {
@@ -197,6 +191,12 @@
           "type" : "boolean"
         },
         "binary" : {
+          "type" : "boolean"
+        },
+        "containerNode" : {
+          "type" : "boolean"
+        },
+        "valueNode" : {
           "type" : "boolean"
         },
         "array" : {
