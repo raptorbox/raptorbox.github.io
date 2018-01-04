@@ -8,9 +8,8 @@ permalink: /documentation/getting-started
 
 ### Requirements
 
-1. Raptor requires a minimum of 4GB of RAM to run slightly.
-2. Ubuntu 16.04 or later
-
+1. Raptor requires a minimum of 2-4GB of RAM to run slightly.
+2. Ubuntu, at least 16.04
 
 ### Required software
 
@@ -37,7 +36,6 @@ Copy-paste this snippet to get started immediately
 curl -s https://raw.githubusercontent.com/raptorbox/raptor/master/scripts/installer.sh | sudo sh -s --
 ```
 
-
 ## Retrieve a release
 
 Check the [release page](https://github.com/raptorbox/raptor/releases) for an up to date release to download.
@@ -62,12 +60,12 @@ Now use `docker-compose` to start the services
 
 ```bash
 # if the command fails due to permissions, use sudo
-docker-compoes up -d
+docker-compose up -d
 
 # view the process status
-docker-compoes ps
+docker-compose ps
 
 # view the logs
-docker-compoes logs -f
+docker-compose logs -f #<service name> eg app or auth
 
 ```

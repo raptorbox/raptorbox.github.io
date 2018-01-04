@@ -1,8 +1,4 @@
----
-layout: page
-title: Raptorbox APIs
-permalink: /documentation/api-docs/
----
+# Raptorbox APIs
 
 Raptor offers a JSON based restful API to manage object definitions, data streams and actions
 

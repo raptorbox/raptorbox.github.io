@@ -1,8 +1,4 @@
----
-layout: page
-title: Configuration
-permalink: /documentation/configuration
----
+# Configuration
 
 ## Prerequisites
 
