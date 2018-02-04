@@ -32,7 +32,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/Device"
+              "$ref": "#/definitions/PageResponse"
             }
           }
         }
@@ -91,7 +91,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/Device"
+              "$ref": "#/definitions/PageResponse"
             }
           }
         }
@@ -308,6 +308,12 @@
           "type" : "integer",
           "format" : "int32"
         },
+        "ownerId": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
         "sortBy" : {
           "$ref" : "#/definitions/SortQuery"
         },
@@ -419,6 +425,50 @@
         },
         "match" : {
           "type" : "string"
+        }
+      }
+    },
+    "PageResponse": {
+      "type": "object",
+      "properties": {
+        "first": {
+          "type": "boolean"
+        },
+        "last": {
+          "type": "boolean"
+        },
+        "number": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "numberOfElements": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sort": {
+          "type": "string"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Device"
+          }
         }
       }
     }
