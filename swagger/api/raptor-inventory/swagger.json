@@ -3,7 +3,7 @@
   "info" : {
     "description" : "Inventory API handles Device definitions",
     "version" : "1.0",
-    "title" : "${project.name",
+    "title" : "Inventory API",
     "termsOfService" : "http://github.com/raptorbox",
     "contact" : {
       "name" : "OpenIoT research unit",
@@ -309,9 +309,6 @@
           "format" : "int32"
         },
         "ownerId": {
-          "type": "string"
-        },
-        "domain": {
           "type": "string"
         },
         "sortBy" : {
