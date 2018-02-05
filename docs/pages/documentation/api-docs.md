@@ -2,8 +2,8 @@
 
 Raptor offers a JSON based restful API to manage object definitions, data streams and actions
 
-* [HTTP API](/./api-docs/http.md)
-* [MQTT Broker](/./api-docs/mqtt.md)
+* [HTTP API](//pages/documentation/apidocs/v5/http.md)
+* [MQTT Broker](//pages/documentation/apidocs/v5/mqtt.md)
 
 
 
