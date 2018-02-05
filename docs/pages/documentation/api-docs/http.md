@@ -43,10 +43,10 @@ The Tree API offers a hierarchical store to group resources like devices and use
 
 The App API offer applications management features
 
-**Work in progress**  See [#1](https://github.com/raptorbox/raptor-app/issues/1) for updates
+[Swagger](http://petstore.swagger.io/?url=https://raptorbox.github.io//swagger/api/raptor-inventory/swagger.json)
 
 ## Auth API
 
 The Auth API offers authentication and authorization, plus management for users, roles, permissions and tokens
 
-**Work in progress**  See [#2](https://github.com/raptorbox/raptor-auth/issues/2) for updates
+[Swagger](http://petstore.swagger.io/?url=https://raptorbox.github.io//swagger/api/raptor-inventory/swagger.json#/)

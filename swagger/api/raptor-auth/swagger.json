@@ -3,7 +3,7 @@
   "info" : {
     "description" : "Auth API handles User, Roles and Permissions management",
     "version" : "1.0",
-    "title" : "${project.name",
+    "title" : "Auth API",
     "termsOfService" : "http://github.com/raptorbox",
     "contact" : {
       "name" : "OpenIoT research unit",
@@ -509,6 +509,28 @@
         }
       }
     },
+    "/auth/token/current" : {
+      "get" : {
+        "tags" : [ "Token" ],
+        "summary" : "Get details about the current token",
+        "description" : "",
+        "operationId" : "getCurrentToken",
+        "parameters" : [ {
+          "name" : "${raptor.auth.header}",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ApiDocsToken"
+            }
+          }
+        }
+      }
+    },
     "/auth/token/{tokenId}" : {
       "get" : {
         "tags" : [ "Token" ],
@@ -591,7 +613,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/ApiDocsUser"
+              "$ref": "#/definitions/PageResponse"
             }
           }
         }
@@ -824,6 +846,9 @@
             "type" : "string"
           }
         },
+        "ownerId" : {
+          "type" : "string"
+        },
         "firstname" : {
           "type" : "string"
         },
@@ -863,20 +888,17 @@
     "JsonNode" : {
       "type" : "object",
       "properties" : {
-        "float" : {
-          "type" : "boolean"
-        },
         "nodeType" : {
           "type" : "string",
           "enum" : [ "ARRAY", "BINARY", "BOOLEAN", "MISSING", "NULL", "NUMBER", "OBJECT", "POJO", "STRING" ]
+        },
+        "float" : {
+          "type" : "boolean"
         },
         "number" : {
           "type" : "boolean"
         },
         "int" : {
-          "type" : "boolean"
-        },
-        "valueNode" : {
           "type" : "boolean"
         },
         "containerNode" : {
@@ -921,6 +943,9 @@
         "binary" : {
           "type" : "boolean"
         },
+        "valueNode" : {
+          "type" : "boolean"
+        },
         "array" : {
           "type" : "boolean"
         },
@@ -963,6 +988,19 @@
         },
         "name" : {
           "type" : "string"
+        },
+        "permissions": {
+          "type": "array",
+          "xml": {
+            "name": "permission",
+            "wrapped": true
+          },
+          "items": {
+            "type": "string"
+          }
+        },
+        "domain": {
+          "type": "string"
         }
       }
     },
@@ -1025,6 +1063,9 @@
           "type" : "string",
           "enum" : [ "DEFAULT", "JWT" ]
         },
+        "owner" : {
+          "$ref" : "#/definitions/User"
+        },
         "valid" : {
           "type" : "boolean"
         },
@@ -1038,9 +1079,6 @@
         "subjectId" : {
           "type" : "integer",
           "format" : "int64"
-        },
-        "owner" : {
-          "$ref" : "#/definitions/User"
         }
       }
     },
@@ -1072,6 +1110,9 @@
           "minLength" : 4,
           "maxLength" : 64
         },
+        "ownerId" : {
+          "type" : "string"
+        },
         "email" : {
           "type" : "string"
         },
@@ -1081,6 +1122,50 @@
         "created" : {
           "type" : "string",
           "format" : "date-time"
+        }
+      }
+    },
+    "PageResponse": {
+      "type": "object",
+      "properties": {
+        "first": {
+          "type": "boolean"
+        },
+        "last": {
+          "type": "boolean"
+        },
+        "number": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "numberOfElements": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sort": {
+          "type": "string"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiDocsUser"
+          }
         }
       }
     }
