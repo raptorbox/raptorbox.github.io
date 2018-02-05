@@ -613,7 +613,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref": "#/definitions/PageResponse"
+              "$ref": "#/definitions/ApiDocsUser"
             }
           }
         }
@@ -846,9 +846,6 @@
             "type" : "string"
           }
         },
-        "ownerId" : {
-          "type" : "string"
-        },
         "firstname" : {
           "type" : "string"
         },
@@ -988,19 +985,6 @@
         },
         "name" : {
           "type" : "string"
-        },
-        "permissions": {
-          "type": "array",
-          "xml": {
-            "name": "permission",
-            "wrapped": true
-          },
-          "items": {
-            "type": "string"
-          }
-        },
-        "domain": {
-          "type": "string"
         }
       }
     },
@@ -1110,9 +1094,6 @@
           "minLength" : 4,
           "maxLength" : 64
         },
-        "ownerId" : {
-          "type" : "string"
-        },
         "email" : {
           "type" : "string"
         },
@@ -1122,50 +1103,6 @@
         "created" : {
           "type" : "string",
           "format" : "date-time"
-        }
-      }
-    },
-    "PageResponse": {
-      "type": "object",
-      "properties": {
-        "first": {
-          "type": "boolean"
-        },
-        "last": {
-          "type": "boolean"
-        },
-        "number": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "totalElements": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "numberOfElements": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "sort": {
-          "type": "string"
-        },
-        "total": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "size": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "page": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "content": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ApiDocsUser"
-          }
         }
       }
     }
