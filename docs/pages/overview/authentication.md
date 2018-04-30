@@ -32,27 +32,29 @@ Permission are plain labels that follow a structure:
 
 `read_own_device` is composed of three informations:
 
-- First `read` is the permission. Core permission recognized by the platform are
-  - `read`
-  - `create`
-  - `update`
-  - `delete`
-  - `push` & `pull` Reference respectively to send and read data for a device
-  - `execute` Is the permission to execute a command on a device
-  - `admin` is a special flag that means all the permission
+* First `read` is the permission. Core permission recognized by the platform are
 
-- Second is an optional flag to define ownership (`own`). This will apply the permission only to the subjects an user created and is considered owner.
+  * `read`
+  * `create`
+  * `update`
+  * `delete`
+  * `push` & `pull` Reference respectively to send and read data for a device
+  * `execute` Is the permission to execute a command on a device
+  * `admin` is a special flag that means all the permission
+
+* Second is an optional flag to define ownership \(`own`\). This will apply the permission only to the subjects an user created and is considered owner.
 
   An example is `admin_own_device` which means users can manage devices created by them but no access those created by others.
 
   Instead `admin_device` will allow users to manage _all_ the devices in the platform.
 
-- Third part is the subject type, in this case `device`. Core types in the platform are
-  - `device` A device instance modeled in the platform
-  - `user` An user
-  - `stream` A collection of data
-  - `token` A token used to query the API
-  - `client` An oAuth2 client to delegate access
+* Third part is the subject type, in this case `device`. Core types in the platform are
+
+  * `device` A device instance modeled in the platform
+  * `user` An user
+  * `stream` A collection of data
+  * `token` A token used to query the API
+  * `client` An oAuth2 client to delegate access
 
 This permission model allow for a certain degree of flexibility in describing permissions on premise. When a more specialized access control is required, the permission API allow to set a specific set of permission of an user on a type instance.
 
@@ -62,7 +64,7 @@ Refer to the Permission API on how to change permissions and delegate access to 
 
 Tokens are used in place of username/password to identify the acting user during the interaction with the platform.
 
-*HTTP requests*: During an HTTP request the token may be prefixed with the `Bearer` keyword and inserted in the `Authorization` header.
+_HTTP requests_: During an HTTP request the token may be prefixed with the `Bearer` keyword and inserted in the `Authorization` header.
 
 A request look like this
 
@@ -72,3 +74,6 @@ Host: api.raptor.local
 Accept: application/json
 Authorization: Bearer <token>
 ```
+
+
+
