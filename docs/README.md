@@ -4,7 +4,7 @@ Raptorbox is an open-source solution for Rapid Prototyping of application for th
 
 ---
 
-In order to learn how it works and how can benefit your IoT projects have a look at the [Overview section](/README.md)
+In order to learn how it works and how can benefit your IoT projects have a look at the [Overview section.](//pages/overview/introduction.md)
 
 To start quickly follow our [Getting Started](//pages/documentation/getting-started.md) page.
 
