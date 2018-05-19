@@ -35,7 +35,7 @@
   * [Login and access to the platform](/pages/documentation/tutorials/getting-started.md)
   * [Create Tokens](/pages/documentation/tutorials/create-token.md)
   * [Manage Users](/pages/documentation/tutorials/manage-users.md)
-* Setup and configuration
+* [Setup and configuration](setup-and-configuration.md)
   * [How to run an instance](/pages/documentation/getting-started.md)
   * [Configuration](/pages/documentation/configuration.md)
   * [Development setup](/pages/documentation/developers.md)

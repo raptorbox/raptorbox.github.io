@@ -17,8 +17,8 @@ For a quick installation, you only need both Docker and Docker Compose installed
 
 See the official Docker guide to install them:
 
--   [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker)
--   [Docker Compose](https://docs.docker.com/compose/install/)
+* [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 
 Example: on an Ubuntu or Debian box as `root` you can install with
 
@@ -46,6 +46,7 @@ Alternatively use the repository
 git clone https://github.com/raptorbox/raptor.git
 cd raptor
 git tag
+echo "127.0.0.1  raptor.local" | sudo tee -a /etc/hosts
 ```
 
 ## Suggested configurations
@@ -67,5 +68,9 @@ docker-compose ps
 
 # view the logs
 docker-compose logs -f #<service name> eg app or auth
-
 ```
+
+## Raptorbox UI
+
+Go to [`http://raptor.local`](http://raptor.local) in your browser to start using the raptorbox.
+
