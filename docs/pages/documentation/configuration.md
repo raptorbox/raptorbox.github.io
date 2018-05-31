@@ -2,22 +2,20 @@
 
 ## Prerequisites
 
-Raptor require a minimum of 4GB of RAM to run slightly.
+Raptor require a minimum of 2-4GB of RAM to run slightly.
 
 For a quick installation, you only need both Docker and Docker Compose installed on your pc.
 
 See the official Docker guide to install them:
 
--   [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker)
--   [Docker Compose](https://docs.docker.com/compose/install/)
+* [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 
 For example on an Ubuntu or Debian box as `root` you can install with
 
-```
-curl -sSL https://get.docker.com/ | sh
-adduser `whoami` docker
-apt-get install python-pip && pip install docker-compose
-```
+    curl -sSL https://get.docker.com/ | sh
+    adduser `whoami` docker
+    apt-get install python-pip && pip install docker-compose
 
 ## Retrieve a release
 
@@ -50,5 +48,7 @@ docker-compoes ps
 
 # view the logs
 docker-compoes logs -f
-
 ```
+
+
+

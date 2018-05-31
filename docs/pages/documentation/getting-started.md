@@ -10,8 +10,18 @@ permalink: /documentation/getting-started
 
 1. Raptor requires a minimum of 2-4GB of RAM to run slightly.
 2. Ubuntu, at least 16.04
+3. Git tools
+4. Docker \(at least Docker 18.03.1-CE\) and Docker Compose
 
-### Required software
+### Installation of required softwares
+
+#### Git
+
+```
+sudo apt-get install git
+```
+
+#### Docker / Docker-Compose
 
 For a quick installation, you only need both Docker and Docker Compose installed on your pc.
 
@@ -28,34 +38,37 @@ adduser `whoami` docker
 sudo apt-get install python-pip -y && sudo  pip install docker-compose
 ```
 
-## Fast setup
+## 
 
-Copy-paste this snippet to get started immediately
+## Installation Of RaptorBox
+
+### Fast setup
+
+For the fast installation, run the following command in terminal to get started immediately
 
 ```bash
 curl -s https://raw.githubusercontent.com/raptorbox/raptor/master/scripts/installer.sh | sudo sh -s --
 ```
 
-## Retrieve a release
+### Retrieve a release
 
-Check the [release page](https://github.com/raptorbox/raptor/releases) for an up to date release to download.
+Installation can also be done by downloading the latest release or by cloning the github repository.
 
-Alternatively use the repository
+* For a latest release, check the [release page](https://github.com/raptorbox/raptor/releases) to download.
+
+* Alternatively, use the repository
 
 ```bash
 git clone https://github.com/raptorbox/raptor.git
 cd raptor
 git tag
-echo "127.0.0.1  raptor.local" | sudo tee -a /etc/hosts
 ```
 
-## Suggested configurations
+After downloading or cloning the release, run the following command.
 
-For a development setup just use `docker-compose` to start the services with the default settings
-
-For public facing services, ensure to **update the default passwords** in `config/raptor.yml` in the users section
-
-## Start the services
+```
+echo "127.0.0.1  raptor.local" | sudo tee -a /etc/hosts
+```
 
 Now use `docker-compose` to start the services
 
@@ -70,7 +83,26 @@ docker-compose ps
 docker-compose logs -f #<service name> eg app or auth
 ```
 
-## Raptorbox UI
+### 
 
-Go to [`http://raptor.local`](http://raptor.local) in your browser to start using the raptorbox.
+### Raptorbox UI
+
+Go to[`http://raptor.local`](http://raptor.local) in your browser to start using the raptorbox.
+
+To login into the RaptorBox, use default username/password.
+
+```
+username: admin
+password: admin
+```
+
+## 
+
+## Suggested configurations
+
+* For a development setup just use `docker-compose up` to start the services with the default settings
+
+* To **change/update the default passwords, **use `<raptorbox root directory>/config/raptor.yml` and in the users section, update the password.
+
+
 

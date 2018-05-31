@@ -37,6 +37,5 @@
   * [Manage Users](/pages/documentation/tutorials/manage-users.md)
 * [Setup and configuration](setup-and-configuration.md)
   * [How to run an instance](/pages/documentation/getting-started.md)
-  * [Configuration](/pages/documentation/configuration.md)
   * [Development setup](/pages/documentation/developers.md)
 
