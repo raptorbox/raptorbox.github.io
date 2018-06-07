@@ -83,7 +83,7 @@ docker-compose ps
 docker-compose logs -f #<service name> eg app or auth
 ```
 
-### 
+
 
 ### Raptorbox UI
 
@@ -96,7 +96,13 @@ username: admin
 password: admin
 ```
 
-## 
+### Raptorbox API Documentation
+
+Go to[`http://raptor.local/apidocs`](http://raptor.local/apidocs) in your browser to start exploring the APIs of raptorbox.
+
+For the authorization token, you can use the first Login API and get the token to test other APIs. 
+
+
 
 ## Suggested configurations
 
