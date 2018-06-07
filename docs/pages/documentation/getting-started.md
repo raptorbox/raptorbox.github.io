@@ -64,7 +64,7 @@ cd raptor
 git tag
 ```
 
-After downloading or cloning the release, run the following command.
+After downloading or cloning the release, run the following command in terminal.
 
 ```
 echo "127.0.0.1  raptor.local" | sudo tee -a /etc/hosts
