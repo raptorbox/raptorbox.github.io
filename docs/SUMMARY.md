@@ -27,8 +27,8 @@
   * [MQTT topics](/pages/documentation/api-docs/mqtt.md)
   * [Javascript SDK](https://github.com/raptorbox/raptorjs/blob/master/README.md)
   * [Java SDK](https://github.com/raptorbox/raptor/blob/master/raptor-sdk/README.md)
-  * [Golang SDK](https://github.com/raptorbox/raptor-sdk-go.md)
-  * [Python SDK \(work in progress\)](https://github.com/raptorbox/raptorpy/blob/master/README.rst)
+  * [Golang SDK](https://github.com/raptorbox/raptor-sdk-go)
+  * [Python SDK \(work in progress\)](https://github.com/raptorbox/raptorpy)
 * Tutorials & Guides
   * [Raptor kick-start project \(Java\)](https://github.com/raptorbox/raptor-tutorial)
   * [Raptor kick-start project \(Nodejs\)](https://github.com/raptorbox/raptor-tutorial-js)
