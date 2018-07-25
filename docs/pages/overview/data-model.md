@@ -18,14 +18,13 @@ To start we need to identify some key fields to describe our device to the platf
 }
 ```
 
-Fields
------
+## Fields
 
-- `name` is _required_ and is used to identify the device
+* `name` is _required_ and is used to identify the device
 
-- `description` is a textual description of the device to help users to identify the device and will be used in searches too
+* `description` is a textual description of the device to help users to identify the device and will be used in searches too
 
-- `customFields` is an object of key / values properties which may be useful to define further details of the device. In the example we put the model but may be any other data
+* `customFields` is an object of key / values properties which may be useful to define further details of the device. In the example we put the model but may be any other data
 
 ## Streams
 
@@ -33,9 +32,9 @@ Streams are datasets, you can imagine them as tables. A channel stay in a stream
 
 Let's have an example with a **location table** which store the movement of our Drone
 
-|Position     | Altitude | Heading|
-|------------ | -------- | -------|
-|11.25, 52.11 | 114.2    | 241.9|
+| Position | Altitude | Heading |
+| --- | --- | --- |
+| 11.25, 52.11 | 114.2 | 241.9 |
 
 Our Drone is at a geo-referenced `Position` and at a certain `Altitude` with a degree of `Heading`.
 
@@ -73,22 +72,21 @@ A sample extended definition is
 
 The channel name is specified as key in the channels object, in this case `position`
 
-Fields
------
+## Fields
 
-- `type` is a predefined value and can be one of
+* `type` is a predefined value and can be one of
 
-  - `number` any number like `-1`, `1.5`, `1.23e-7`
-  - `string` any UTF-8 string like `µ€llò ←→ wørld ™`
-  - `boolean` one of `true` or `false`
-  - `geo_point` a point coordinate in a format of
+  * `number` any number like `-1`, `1.5`, `1.23e-7`
+  * `string` any UTF-8 string like `µ€llò ←→ wørld ™`
+  * `boolean` one of `true` or `false`
+  * `geo_point` a point coordinate in a format of
 
-    - a string like `lon, lat`
-    - a json array like `[lon, lat]`
-    - a json object like `{ "lon": n.n, "lat": n.n }`
-    - a geohash `drm3btev3e86`
+    * a string like `lon, lat`
+    * a json array like `[lon, lat]`
+    * a json object like `{ "lon": n.n, "lat": n.n }`
+    * a geohash `drm3btev3e86`
 
-- `unit` is a descriptive string value for the type of the data, eg `degrees`, `miles`, `celsius`, `meters`
+* `unit` is a descriptive string value for the type of the data, eg `degrees`, `miles`, `celsius`, `meters`
 
 A minimum channel definition can be composed of just the `channel name` and the `type`
 
@@ -115,15 +113,13 @@ Let's add an action to invoke and then track the status on a connected device
 
 The `actions` fields is a list as array of objects with just two fields
 
-Fields
------
+## Fields
 
+* `name` a unique name of the action, it will be used in the API call
 
-- `name` a unique name of the action, it will be used in the API call
+* `description` for the human presentation of the action
 
-- `description` for the human presentation of the action
-
---------------------------------------------------------------------------------
+---
 
 ## A complete example definition
 
@@ -157,9 +153,9 @@ The same can be expressed in an expanded way
         "model": "aero/202111"
     },
     "streams": {
-        "description": "GPS outdoor location",
-        "type": "sensor",
-        "location": {
+        "location": {         // stream name
+            "description": "GPS outdoor location",
+            "type": "sensor",
             "channels": {
                 "position": {
                     "type": "geo_point"
@@ -183,3 +179,6 @@ The same can be expressed in an expanded way
     ]
 }
 ```
+
+
+

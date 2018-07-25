@@ -16,7 +16,7 @@
     * [Action](pages/overview/components/action.md)
     * [Database and Cache](pages/overview/components/database-and-cache.md)
     * [UI](pages/overview/components/ui.md)
-* Developer Resources
+* [Developer Resources](developer-resources.md)
   * [HTTP API docs](/pages/documentation/api-docs.md)
     * [v4](pages/documentation/api-docs/v4.md)
       * [HTTP](pages/documentation/api-docs/v4/http.md)
@@ -24,7 +24,6 @@
     * v5
       * [HTTP](pages/documentation/api-docs/v5/http.md)
       * [MQTT](pages/documentation/api-docs/v5/mqtt.md)
-  * [MQTT topics](/pages/documentation/api-docs/mqtt.md)
   * [Javascript SDK](https://github.com/raptorbox/raptorjs/blob/master/README.md)
   * [Java SDK](https://github.com/raptorbox/raptor/blob/master/raptor-sdk/README.md)
   * [Golang SDK](https://github.com/raptorbox/raptor-sdk-go)

@@ -11,7 +11,11 @@ url:         v5.raptorbox.eu
 port:        1883
 username:    <valid username> // authentication required to subscribe the topic
 password:    <valid password>
-topic:         <device id>/streams/<stream name>/updates
+topic:         stream/<device id>/<stream name>
+
+
+// to access all the data
+topic:         '#' 
 ```
 
 Detailed information about connection to MQTT, payload, and response etc can be found [here](https://docs.raptorbox.eu/pages/documentation/api-docs/v5/mqtt.html).
